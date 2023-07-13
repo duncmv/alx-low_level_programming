@@ -1,6 +1,12 @@
 #include <stdio.h>
 /**
  * main - a function that prints size of various types
+ * @a: character variable
+ * @b: integer variable
+ * @c: long integer variable
+ * @d: long long integer variable
+ * @e: float variable
+ *
  * Return: 0
  */
 int main(char a, int b, long int c, long long int d, float e)
