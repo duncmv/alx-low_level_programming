@@ -12,7 +12,8 @@ int main(void)
 	{	int x = n + 1;
 
 		while (x < 58)
-		{	if (x != n)
+		{	
+			if (x != n)
 			{	putchar(n);
 				putchar(x);
 			}
