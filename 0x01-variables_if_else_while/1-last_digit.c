@@ -3,8 +3,6 @@
 #include <stdio.h>
 
 /* main - main block
- * @n: first arg
- * @x: second arg
  *
  * Return: 0
  */

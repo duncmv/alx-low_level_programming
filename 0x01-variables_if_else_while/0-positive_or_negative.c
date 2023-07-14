@@ -4,7 +4,6 @@
 
 /**
  * main - main block
- * @n: number to be checked
  *
  * Return: 0
  */
