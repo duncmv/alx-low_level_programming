@@ -1,13 +1,13 @@
 #include <stdio.h>
 /**
  * main - main block
- * @n: first arg
  *
  * Return: 0
  */
-int main(int n)
+int main(void)
 {
-	n = 48;
+	int n = 48;
+
 	while (n < 58)
 	{	putchar(n);
 		n++;
