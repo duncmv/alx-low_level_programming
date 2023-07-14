@@ -12,7 +12,7 @@ int main(void)
 	{	putchar(n);
 		n++;
 	}
-	n =97;
+	n = 97;
 	while (n < 103)
 	{	putchar(n);
 		n++;
