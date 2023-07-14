@@ -9,11 +9,11 @@ int main(void)
 	int n = 48;
 
 	while (n < 58)
-	{	
+	{
 		int x = n + 1;
 
 		while (x < 58)
-		{	
+		{
 			if (x != n)
 			{	putchar(n);
 				putchar(x);
@@ -24,7 +24,7 @@ int main(void)
 			}
 			x++;
 		}
-		n++;	
+		n++;
 	}
 	putchar(10);
 	return (0);
