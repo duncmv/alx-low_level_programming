@@ -1,13 +1,12 @@
 #include <stdio.h>
 /**
  * main - main block
- * @n: first arg
- *
+ * 
  * Return: 0
  */
-int main(int n)
+int main(void)
 {
-	n = 97;
+	int n = 97;
 	while (n < 123)
 	{	putchar(n);
 		n++;
