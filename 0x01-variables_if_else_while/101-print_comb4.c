@@ -13,11 +13,12 @@ int main(void)
 		int x = n + 1;
 
 		while (x < 57)
-		{	
+		{
 			int y = x + 1;
 
 			while (y < 58)
-			{	if (x != n && x != y)
+			{
+				if (x != n && x != y)
 				{	putchar(n);
 					putchar(x);
 					putchar(y);
