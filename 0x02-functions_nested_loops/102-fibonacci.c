@@ -19,7 +19,7 @@ int main(void)
 		x = tmp;
 		if (n < 48)
 			printf("%ld, ", fib);
-		else 
+		else
 			printf("%ld", fib);
 		n++;
 	}
