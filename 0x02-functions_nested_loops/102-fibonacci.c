@@ -20,7 +20,7 @@ int main(void)
 		printf("%d, ", fib);
 		n++;
 	}
-	ptintf('\n');
+	printf('\n');
 	return (0);
 }
 
