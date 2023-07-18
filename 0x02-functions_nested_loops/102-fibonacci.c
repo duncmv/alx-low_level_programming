@@ -12,12 +12,15 @@ int main(void)
 	long tmp;
 
 	printf("1, 2, ");
-	while (n < 50)
+	while (n < 49)
 	{
 		tmp = fib;
 		fib += x;
 		x = tmp;
-		printf("%ld, ", fib);
+		if (n < 48)
+			printf("%ld, ", fib);
+		else 
+			printf("%ld", fib);
 		n++;
 	}
 	printf("\n");
