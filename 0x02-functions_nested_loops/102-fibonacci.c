@@ -18,6 +18,6 @@ int main(void)
 		fib += x;
 		x = tmp;
 		printf("%d, ", fib);
-		n++
+		n++;
 }
 
