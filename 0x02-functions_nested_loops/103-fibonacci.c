@@ -18,5 +18,6 @@ int main(void)
 		x = tmp;
 		sum = sum + fib - 1;
 	}
+	printf("%ld\n", sum);
 	return (0);
 }
