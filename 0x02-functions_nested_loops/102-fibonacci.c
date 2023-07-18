@@ -19,5 +19,8 @@ int main(void)
 		x = tmp;
 		printf("%d, ", fib);
 		n++;
+	}
+	ptintf('\n');
+	return (0);
 }
 
