@@ -17,7 +17,7 @@ int main(void)
 		tmp = fib;
 		fib += x;
 		x = tmp;
-		printf("%d, ", fib);
+		printf("%ld, ", fib);
 		n++;
 	}
 	printf("\n");
