@@ -46,7 +46,7 @@ void print_times_table(int n)
 				y++;
 			}
 			_putchar('\n');
-			x+;
+			x++;
 		}
 	}
 }
