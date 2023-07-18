@@ -18,4 +18,5 @@ int main(void)
 		x = tmp;
 		sum = sum + fib - 1;
 	}
+	return (0);
 }
