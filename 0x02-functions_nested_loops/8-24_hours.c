@@ -20,12 +20,7 @@ void jack_bauer(void)
 					m2 = 48;
 					while (m2 < 58)
 					{
-						_putchar(h1);
-						_putchar(h2);
-						_putchar(':');
-						_putchar(m1);
-						_putchar(m2);
-						_putchar('\n');
+						_putchar(h1 + h2 + ':' + m1 + m2);
 						m2++;
 					}
 					m1++;
