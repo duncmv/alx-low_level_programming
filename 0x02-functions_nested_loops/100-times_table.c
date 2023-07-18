@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * 100s - if multiple is in hundreds
+ * _100s - if multiple is in hundreds
  * @p: int type arg
  */
-void 100s(int p)
+void _100s(int p)
 {
 	int a = p % 100;
 
@@ -14,10 +14,10 @@ void 100s(int p)
 
 
 /**
- * 10s - if multiple is in tens
+ * _10s - if multiple is in tens
  * @p: int type arg
  */
-void 10s(int p)
+void _10s(int p)
 {
 	_putchar(' ');
 	_putchar(p / 10 + '0');
@@ -25,10 +25,10 @@ void 10s(int p)
 }
 
 /**
- * 1s - if multiple is in ones
+ * _1s - if multiple is in ones
  * @p: int type arg
  */
-void 1s(int p)
+void _1s(int p)
 {
 	_putchar(' ');
 	_putchar(' ');
@@ -54,15 +54,15 @@ void print_times_table(int n)
 				z = x * y;
 				if (z > 99)
 				{
-					100s(z);
+					_100s(z);
 				}
 				else if (z > 9 && z < 100)
 				{
-					10s(z);
+					_10s(z);
 				}
 				else if (y != 0)
 				{
-					1s(z);
+					_1s(z);
 				}
 				else
 				{
