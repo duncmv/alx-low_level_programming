@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-	int fib = 2;
-	int x = 1;
+	long fib = 2;
+	long x = 1;
 	int n = 1;
-	int tmp;
+	long tmp;
 
 	printf("1, 2, ");
 	while (n < 50)
