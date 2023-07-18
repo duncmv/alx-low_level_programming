@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * print_times_table - prints @n times table
+ * @n: int type arg
  */
 void print_times_table(int n)
 {
@@ -17,11 +18,13 @@ void print_times_table(int n)
 				z = x * y;
 				if (z > 99)
 				{
+					int a = z % 100;
+
 					_putchar(z / 100 + '0');
-					_putchar(z / 10 + '0');
+					_putchar(a / 10 + '0');
 					_putchar(z % 10 + '0');
 				}
-				else if ( z > 9 && z < 100)
+				else if (z > 9 && z < 100)
 				{
 					_putchar(' ');
 					_putchar(z / 10 + '0');
