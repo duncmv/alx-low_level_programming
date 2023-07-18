@@ -1,8 +1,10 @@
 #include <stdio.h>
 /**
  * main - sum of multiples of 3 and 5 less than 1024
+ *
+ * Return: 0
  */
-void main(void)
+int main(void)
 {
 	int x = 0;
 	int sum = 0;
@@ -14,4 +16,5 @@ void main(void)
 		x++;
 	}
 	printf("%d\n", sum);
+	return (0);
 }
