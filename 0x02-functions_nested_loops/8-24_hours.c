@@ -39,7 +39,7 @@ void jack_bauer(void)
 		h2 = 48;
 		if (h1 == 50)
 		{
-			while (h2 < 53)
+			while (h2 < 52)
 			{
 				minutes(h1, h2);
 				h2++;
