@@ -1,32 +1,36 @@
 #include "main.h"
 /**
- * print_number - prints numbers
- * @n: number to be printed
+ * print_digit - print digits recursively
+ * @n: integer
+ *
+ */
+void print_digit(int n)
+{
+	if (n == 0)
+	{
+		return;
+	}
+	print_digit(n / 10);  /* Recursively call for remaining digits*/
+	_putchar('0' + (n % 10));  /* Print the current digit*/
+}
+
+/**
+ * print_number - prints number
+ * @n: integer
  */
 void print_number(int n)
 {
-	int x, y;
-
-	if (n < 0)
+	if (n == 0)
 	{
-		n *= -1;
+		_putchar('0');
+	}
+	else if (n < 0)
+	{
 		_putchar('-');
+		print_digit(-n);
 	}
-
-	x = 1;
-	y = 10;
-
-	while (x)
+	else
 	{
-		if (n / y  > 0)
-			y *= 10;
-		else
-			 x = 0;
-	}
-
-	while (y > 1)
-	{
-		_putchar(n % y + '0');
-		y /= 10;
+		print_digit(n);
 	}
 }
