@@ -18,6 +18,7 @@ int main(void)
 			printf("Fizz ");
 		else
 			printf("%d ", i);
+		i++;
 	}
 	printf("\n");
 	return (0);
