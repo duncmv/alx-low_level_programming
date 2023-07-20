@@ -13,3 +13,4 @@ void print_line(int n)
 		x++;
 	}
 	_putchar('\n');
+}
