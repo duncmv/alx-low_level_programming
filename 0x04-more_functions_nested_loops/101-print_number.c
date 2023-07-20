@@ -29,6 +29,4 @@ void print_number(int n)
 		_putchar(n % y + '0');
 		y /= 10;
 	}
-
-	_putchar('\n');
 }
