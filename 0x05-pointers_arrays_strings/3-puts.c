@@ -15,7 +15,7 @@ void _puts(char *str)
 
 		if (x != '\0')
 		{
-			_putchar(x + '0');
+			_putchar(x);
 			n++;
 		}
 
