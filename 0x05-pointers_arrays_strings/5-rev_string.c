@@ -22,14 +22,14 @@ void rev_string(char *s)
 
 	i = 0;
 
-	z = ind;
+	z = ind - i;
 
 	while (i < z)
 	{
-		z = ind - i;
 		tmp = *(s + i);
 		*(s + i) = *(s + z);
 		*(s + z) = tmp;
 		i++;
+		z--;
 	}
 }
