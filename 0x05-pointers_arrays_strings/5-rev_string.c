@@ -16,7 +16,9 @@ void rev_string(char *s)
 		if (x != '\0')
 			n++;
 	}
-	int index = n - 1;
+	int ind;
+
+	ind = n - 1;
 
 	int z = 1;
 
@@ -26,7 +28,7 @@ void rev_string(char *s)
 	for (i = 0; i < z; i++)
 	{
 		tmp = *(s + i);
-		z = index - i;
+		z = ind - i;
 		*(s + i) = *(s + z);
 		*(s + z) = tmp;
 	}
