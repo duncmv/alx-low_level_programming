@@ -20,11 +20,14 @@ void rev_string(char *s)
 
 	ind = n - 1;
 
-	for (i = 0; i < z; i++)
+	i = 0;
+
+	while (i < z)
 	{
 		tmp = *(s + i);
 		z = ind - i;
 		*(s + i) = *(s + z);
 		*(s + z) = tmp;
+		i++;
 	}
 }
