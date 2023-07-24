@@ -22,6 +22,8 @@ void rev_string(char *s)
 
 	i = 0;
 
+	z = 1;
+
 	while (i < z)
 	{
 		tmp = *(s + i);
