@@ -26,8 +26,8 @@ void rev_string(char *s)
 
 	while (i < z)
 	{
-		tmp = *(s + i);
 		z = ind - i;
+		tmp = *(s + i);
 		*(s + i) = *(s + z);
 		*(s + z) = tmp;
 		i++;
