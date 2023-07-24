@@ -5,9 +5,10 @@
  */
 void rev_string(char *s)
 {
-	int n = 0;
+	int i, ind, z, n;
+	char x, tmp;
 
-	char x;
+	n = 0;
 
 	while (x != '\0')
 	{
@@ -16,14 +17,10 @@ void rev_string(char *s)
 		if (x != '\0')
 			n++;
 	}
-	int ind;
 
 	ind = n - 1;
 
-	int z = 1;
-
-	int i;
-	char tmp;
+	z = 1;
 
 	for (i = 0; i < z; i++)
 	{
