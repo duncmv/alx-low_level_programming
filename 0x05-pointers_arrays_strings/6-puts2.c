@@ -13,12 +13,9 @@ void puts2(char *str)
 	{
 		x = *(str + n);
 
-		if (x != '\0')
-		{
-			_putchar(x);
-			n = n + 2;
-		}
-
+		_putchar(x);
+		n = n + 2;
+	
 	}
 	_putchar('\n');
 }
