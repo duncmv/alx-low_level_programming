@@ -20,15 +20,12 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == needle[0])
 		{
-			for (j = 1; needle[j]; j++)
+			for (j = 1; (i + j) <= x; j++)
 			{
-				while ((i + j) <= x)
-				{
-					if (haystack[i + j] == needle[j])
-						continue;
-					else
-						break;
-				}
+				if (haystack[i + j] == needle[j])
+					continue;
+				else
+					break;	
 			}
 			if (j == y)
 				return (haystack + i);
