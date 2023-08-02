@@ -7,7 +7,7 @@
  */
 int _sqrt_recursion(int n)
 {
-	getroot(n, 1);
+	return (getroot(n, 1));
 }
 /**
  * getroot - help function
