@@ -34,4 +34,5 @@ int pali(char *s, int i, int n)
 		else
 			return (0);
 	}
+	return (0);
 }
