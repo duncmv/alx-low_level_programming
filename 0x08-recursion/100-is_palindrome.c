@@ -1,5 +1,20 @@
 #include "main.h"
-int _strlen_recursion(char *s);
+/**
+ * _strlen_recursion - returns length of a string
+ * @s: pointer to a string
+ *
+ * Return: length of string
+ */
+int _strlen_recursion(char *s)
+{
+        int i = 0;
+
+        if (*s == '\0')
+                return (0);
+
+        i = 1 + _strlen_recursion(s + 1);
+        return (i);
+}
 /**
  * is_palindrome - checks string for palindrome
  * @s: pointer to string
