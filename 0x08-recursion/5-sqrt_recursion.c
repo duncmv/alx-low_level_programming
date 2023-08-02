@@ -25,7 +25,7 @@ int getroot(int n, int i)
 	if (sq == n)
 		return (i);
 	else if (sq < n)
-		return(getroot(n, i + 1));
+		return (getroot(n, i + 1));
 	else
 		return (-1);
 }
