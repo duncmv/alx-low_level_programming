@@ -15,3 +15,4 @@ int is_palindrome(char *s);
 int pali(char *s, int i, int n);
 
 #endif
+int wildcmp(char *s1, char *s2);
