@@ -28,16 +28,13 @@ int main(int argc, char *argv[])
 
 			for (j = 0; j < x; j++)
 			{
-				if (!(*(p + j) >= '0' && *(p + j)<= '9'))
+				if (!(*(p + j) >= '0' && *(p + j) <= '9'))
 				{
 					printf("Error\n");
 					return (0);
 				}
-				else
-				{
-					sum = sum + atoi(argv[i]);
-				}
 			}
+			sum = sum + atoi(argv[i]);
 		}
 		printf("%d\n", sum);
 	}
