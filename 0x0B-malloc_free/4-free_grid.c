@@ -1,4 +1,4 @@
-#include "mainh"
+#include "main.h"
 #include <stdlib.h>
 /**
  * free_grid - frees a 2D array
