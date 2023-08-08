@@ -17,7 +17,7 @@ char **strtow(char *str)
 
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		if (*(str + i) == '\t')
+		if (*(str + i) == '\t' || *(str + i) == ' ')
 			n++;
 	}
 	n++;
@@ -29,7 +29,7 @@ char **strtow(char *str)
 	n = 0;
 	for (i = 0; *(str + i) != '\0'; i++)
 	{
-		if (*(str + i) == '\t')
+		if (*(str + i) == '\t' || *(str + i) == ' ')
 		{
 			wdlen = i - wdlen;
 			p[n] = malloc(wdlen * sizeof(**p));
@@ -56,7 +56,7 @@ char **strtow(char *str)
 
 	for (i = 0, j = 0; *(str + i) != '\0'; i++, j++)
 	{
-		if (*(str + i) == '\t')
+		if (*(str + i) == '\t' || *(str + i) == ' ')
 		{
 			p[n][j] = '\0';
 			j = 0;
