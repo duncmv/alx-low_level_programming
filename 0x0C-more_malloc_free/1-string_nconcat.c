@@ -19,14 +19,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	x = (unsigned int)strlen(s1);
+	x = (int)strlen(s1);
 	p = malloc((x + n + 1) * sizeof(*p));
 	if (p == NULL)
 		return (NULL);
 
-	for (i = 0, j = 0; i < (x + n); i++)
+	for (i = 0, j = 0; i < (x + (int)n); i++)
 	{
-		if (i < strlen(s1))
+		if (i < x)
 			p[i] = s1[i];
 		else
 			p[i] = s2[j++];
