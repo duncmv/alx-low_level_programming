@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stlib.h>
 /**
  * free_dog - a function that fress dogs
  * @d: pointer to a dog
