@@ -30,8 +30,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(p);
 		return (NULL);
 	}
-	for (i = 0; i <= (int)strlen(name); i++)
-		nmcpy[i] = name[i];
+	else
+	{
+		for (i = 0; i <= (int)strlen(name); i++)
+			nmcpy[i] = name[i];
+	}
 	for (i = 0; i <= (int)strlen(owner); i++)
 		owncpy[i] = owner[i];
 
