@@ -10,7 +10,6 @@
 int main(int argc, char **argv)
 {
 	int i, (*p)(int, int);
-	char *o[] = {"/", "%"};
 
 	if (argc != 4)
 	{
@@ -18,10 +17,10 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if ((argv[2][0] == o[0][0] || argv[2][0] == o[1][0]) && atoi(argv[3]) == 0)
+	if (argv[2][1] != '\0')
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
 	p = get_op_func(argv[2]);
