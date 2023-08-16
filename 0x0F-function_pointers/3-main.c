@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i, (*p)(int, int);
+	int i, a, b, (*p)(int, int);
 
 	if (argc != 4)
 	{
@@ -30,7 +30,10 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(99);
 	}
-	i = p(atoi(argv[1]), atoi(argv[3]));
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	i = p(a, b);
 
 	printf("%d\n", i);
 	return (0);
