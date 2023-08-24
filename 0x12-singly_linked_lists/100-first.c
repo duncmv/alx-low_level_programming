@@ -1,5 +1,7 @@
 #include <stdio.h>
-
+/**
+ * bmain - executes before main
+ */
 void __attribute__((constructor)) bmain(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
