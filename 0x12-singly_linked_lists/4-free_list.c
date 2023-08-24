@@ -5,14 +5,10 @@
  */
 void free_list(list_t *head)
 {
-	if (head != NULL && head->next == NULL)
+	if (head != NULL)
 	{
+		free_list(head->next);
+		free(head->str);
 		free(head);
-		return;
 	}
-	else if (head->next != NULL && head != NULL)
-	{
-		free(head->next);
-	}
-	free(head);
 }
