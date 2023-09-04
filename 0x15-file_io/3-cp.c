@@ -17,7 +17,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
-	
+
 	f[0] = open(av[1], 0);
 	if (f[0] == -1)
 		dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
@@ -33,8 +33,8 @@ int main(int ac, char **av)
 		}
 		if (statusi > 0)
 		{
-			statuso =write(f[1], buff, statusi);
-			if (statuso == - 1)
+			statuso = write(f[1], buff, statusi);
+			if (statuso == -1)
 			{
 				dprintf(2, "Error: Can't write to %s\n", av[2]);
 				exit(99);
