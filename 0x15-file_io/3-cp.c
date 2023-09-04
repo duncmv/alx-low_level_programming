@@ -31,15 +31,16 @@ int main(int ac, char **av)
 			dprintf(2, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
-		if (status > 0)
+		if (statusi > 0)
 		{
-			statuso =write(f[1], buff, status);
+			statuso =write(f[1], buff, statusi);
 			if (statuso == - 1)
 			{
 				dprintf(2, "Error: Can't write to %s\n", av[2]);
 				exit(99);
 			}
-	} while (status > 0);
+		}
+	} while (statusi > 0);
 	s1 = close(f[1]);
 	s2 = close(f[0]);
 	if (s1 == -1 || s2 == -1)
