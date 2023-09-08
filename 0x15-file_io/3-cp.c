@@ -15,7 +15,7 @@ int main(int ac, char **av)
 	char buff[1024];
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
-	
+
 	if (ac != 3)
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
 
