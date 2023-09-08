@@ -16,19 +16,19 @@ int main(int ac, char **av)
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (ac != 3)
-		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
+		dprintf(stderr, "Usage: cp file_from file_to\n"), exit(97);
 
 	f[0] = open(av[1], 0);
 	if (f[0] == -1)
-		dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
+		dprintf(stderr, "Error: Can't read from file %s\n", av[1]), exit(98);
 	f[1] = open(av[2], 1 | O_CREAT | O_TRUNC, mode);
 	if (f[1] == -1)
-		dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
+		dprintf(stderr, "Error: Can't write to %s\n", av[2]), exit(99);
 	do {
 		statusi = read(f[0], buff, 1024);
 		if (statusi == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", av[1]);
+			dprintf(stderr, "Error: Can't read from file %s\n", av[1]);
 			exit(98);
 		}
 		if (statusi > 0)
@@ -36,7 +36,7 @@ int main(int ac, char **av)
 			statuso = write(f[1], buff, statusi);
 			if (statuso == -1)
 			{
-				dprintf(2, "Error: Can't write to %s\n", av[2]);
+				dprintf(stderr, "Error: Can't write to %s\n", av[2]);
 				exit(99);
 			}
 		}
