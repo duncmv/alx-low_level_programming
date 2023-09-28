@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 	int len = (int)strlen(b), i;
 	unsigned int num, n, factor = 1;
 
-	if (b[len - 1] != '0' && b[len - 1] != '1')
+	if (b == NULL || (b[len - 1] != '0' && b[len - 1] != '1'))
 		return (0);
 	num = b[len - 1] == '0' ? 0 : 1;
 
