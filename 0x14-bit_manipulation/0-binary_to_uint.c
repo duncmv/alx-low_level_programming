@@ -1,27 +1,27 @@
 #include "main.h"
-#include <string.h>
 /**
- * binary_to_uint - converts a binary number to unsigned int
- * @b: pointer to string of binary
- *
+ * binary_to_uint -converts a binary number to unsigned int
+ * @b: pointer to string of 1 and 0
  * Return: converted number or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int len = (int)strlen(b), i;
-	unsigned int num, n, factor = 1;
+	unsigned int n, bin;
+	int i;
 
-	if (b == NULL || (b[len - 1] != '0' && b[len - 1] != '1'))
+	if (b == NULL)
 		return (0);
-	num = b[len - 1] == '0' ? 0 : 1;
 
-	for (i = len - 2; i >= 0; i--)
+	for (i = 0; b[i] != '\0'; i++)
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		n = b[i] == '0' ? 0 : 1;
-		factor *= 2;
-		num += n * factor;
 	}
-	return (num);
+
+	for (bin = 1, n = 0, i--; i >= 0; i--, bin *= 2)
+	{
+		if (b[i] == '1')
+			n += bin;
+	}
+	return (n);
 }
