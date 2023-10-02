@@ -1,56 +1,53 @@
-#include "main.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <stdio.h>
 /**
- * print_error - prints errors
- * @code : error code
- * @av: array of args
- */
-void print_error(int code, char **av)
-{
-	if (code == 97)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-	if (code == 98)
-		dprintf(STDERR_FILENO, "Can't read from %s\n", av[1]);
-	if (code == 99)
-		dprintf(STDERR_FILENO, "Can't write to %s\n", av[2]);
-}
-/**
- * main - function that copies content from one file to another
+ * main - main function
  * @ac: arg count
- * @av: array of args
- *
- * Return: 0 or err
+ * @av: arg vector
+ * Return: 0
  */
 int main(int ac, char **av)
 {
-	int fd1, fd2, close_s;
-	char *buff;
-	ssize_t read_stat, write_status;
-	mode_t perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	int f[2];
+	int statusi, statuso, s1, s2;
+	char buff[1024];
+	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+
 
 	if (ac != 3)
-		print_error(97, av), exit(97);
-	fd1 = open(av[1], O_RDONLY);
-	if (fd1 == -1)
-		print_error(98, av), exit(98);
-	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
-	if (fd2 == -1)
-		print_error(99, av), exit(99);
-	buff = malloc(sizeof(char) * 1024), read_stat = read(fd1, buff, 1024);
-	if (read_stat == -1)
-		print_error(98, av), exit(98);
-	while (read_stat != 0)
+		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
+
+	f[0] = open(av[1], 0);
+	if (f[0] == -1)
+		dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
+	f[1] = open(av[2], 1 | O_CREAT | O_TRUNC, mode);
+	if (f[1] == -1)
+		dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
+	do {
+		statusi = read(f[0], buff, 1024);
+		if (statusi == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
+		if (statusi > 0)
+		{
+			statuso = write(f[1], buff, statusi);
+			if (statuso == -1)
+			{
+				dprintf(2, "Error: Can't write to %s\n", av[2]);
+				exit(99);
+			}
+		}
+	} while (statusi > 0);
+	s1 = close(f[1]);
+	s2 = close(f[0]);
+	if (s1 == -1 || s2 == -1)
 	{
-		write_status = write(fd2, buff, (size_t)read_stat);
-		if (write_status == -1)
-			print_error(99, av), exit(99);
-		read_stat = read(fd1, buff, 1024);
+		dprintf(2, "Error: Can't close fd %d\n", s1 == -1 ? 3 : 4);
+		exit(100);
 	}
-	free(buff);
-	close_s = close(fd1);
-	if (close_s == -1)
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd1), exit(100);
-	close_s = close(fd2);
-	if (close_s == -1)
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2), exit(100);
 	return (0);
 }
