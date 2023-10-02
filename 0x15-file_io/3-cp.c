@@ -36,6 +36,8 @@ int main(int ac, char **av)
 	if (fd2 == -1)
 		print_error(99, av), exit(99);
 	buff = malloc(sizeof(char) * 1024), read_stat = read(fd1, buff, 1024);
+	if (read_stat == -1)
+		print_error(98, av), exit(98);
 	while (read_stat != 0)
 	{
 		write_status = write(fd2, buff, (size_t)read_stat);
