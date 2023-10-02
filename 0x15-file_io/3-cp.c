@@ -33,6 +33,8 @@ int main(int ac, char **av)
 	if (fd1 == -1)
 		print_error(98, av), exit(98);
 	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
+	if (fd2 == -1)
+		print_error(99, av), exit(99);
 	buff = malloc(sizeof(char) * 1024), read_stat = read(fd1, buff, 1024);
 	while (read_stat != 0)
 	{
