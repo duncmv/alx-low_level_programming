@@ -31,7 +31,7 @@ def island_perimeter(grid):
                     perimeter += 1
                 elif j == 0:
                     perimeter += 1
-                if j != width -1 and grid[i][j + 1] == 0:
+                if j != width - 1 and grid[i][j + 1] == 0:
                     perimeter += 1
                 elif j == width - 1:
                     perimeter += 1
